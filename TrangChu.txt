@@ -1,0 +1,9 @@
+#ACCOUNT
+TK=
+MK=
+
+#DAY:0
+Hoạt động 1: 
+TICK: 0
+NOTE: 
+#END

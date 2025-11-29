@@ -1,0 +1,42 @@
+#ACCOUNT
+TK=user1
+MK=12345
+#DAY:-1
+Hoạt động 1: Đọc sách 10 phút
+Hoạt động 2: Đọc sách 20 phút
+Hoạt động 3: Đọc sách 30 phút
+Hoạt động 4: Đọc sách 40 phút
+Hoạt động 5: Đọc sách 50 phút
+TICK: 1 0 1 0 0
+NOTE: Ngày mai cố gắng hơn.
+#DAY:-2
+Hoạt động 1: Tập thể dục
+Hoạt động 2: Học tiếng Anh
+TICK: 1 1
+NOTE: Hôm nay hơi lười.
+#DAY:-3
+Hoạt động 1: Nghe nhạc 30 phút
+Hoạt động 2: Viết nhật ký
+Hoạt động 3: Học Python 1 giờ
+Hoạt động 4: Đi dạo
+TICK: 1 0 1 1
+NOTE: Ngày khá thú vị.
+
+#ACCOUNT
+TK=admin
+MK=admin1
+#DAY:-1
+Hoạt động 1: Đi làm 8 giờ
+Hoạt động 2: Họp team
+TICK: 1 1
+NOTE: Một ngày dài!
+#DAY:-2
+Hoạt động 1: Chỉnh sửa tài liệu
+Hoạt động 2: Tập thể dục nhẹ
+TICK: 0 1
+NOTE: Ổn định.
+#DAY:-3
+Hoạt động 1: Nghỉ ngơi
+Hoạt động 2: Xem phim
+TICK: 1 0
+NOTE: Thư giãn trước tuần mới.
