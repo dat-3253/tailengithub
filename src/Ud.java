@@ -452,8 +452,7 @@ private void kiemTraNgayReset() {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    try {
+        try {
         FileWriter fw = new FileWriter("TrangChu.txt");
         PrintWriter pw = new PrintWriter(fw);
 

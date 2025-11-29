@@ -2,6 +2,9 @@ import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -71,6 +74,11 @@ public class login extends javax.swing.JFrame {
         });
 
         jButton3.setText("Tạo Tài Khoản");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,6 +234,95 @@ public class login extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Sai TK/MK hoặc chưa tạo tài khoản!");
     }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+    String user = jTextField1.getText().trim();
+    String pass = new String(jPasswordField1.getPassword()).trim();
+
+    // KIỂM TRA ĐỘ DÀI
+    if (user.length() < 5) {
+        JOptionPane.showMessageDialog(this, "Tên tài khoản phải trên 5 ký tự!");
+        return;
+    }
+    if (pass.length() < 5) {
+        JOptionPane.showMessageDialog(this, "Mật khẩu phải trên 5 ký tự!");
+        return;
+    }
+
+    // KIỂM TRA TK ĐÃ TỒN TẠI
+    try {
+        File file = new File("ThongTin.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line, tk = "";
+        boolean readingAccount = false;
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.equals("#ACCOUNT")) {
+                readingAccount = true;
+                tk = "";
+                continue;
+            }
+
+            if (readingAccount) {
+                if (line.startsWith("TK=")) {
+                    tk = line.substring(3).trim();
+                }
+
+                if (line.startsWith("#DAY")) {
+                    if (user.equals(tk)) {
+                        JOptionPane.showMessageDialog(this, "Tài khoản đã tồn tại!");
+                        br.close();
+                        return;
+                    }
+                    readingAccount = false;
+                }
+            }
+        }
+        br.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi kiểm tra tài khoản!");
+        return;
+    }
+
+    // GHI TÀI KHOẢN MỚI — THEO ĐÚNG FORM BẠN MẪU
+    try {
+        BufferedWriter bw = new BufferedWriter(new FileWriter("ThongTin.txt", true));
+
+        bw.write("#ACCOUNT\n");
+        bw.write("TK=" + user + "\n");
+        bw.write("MK=" + pass + "\n");
+
+        // 3 ngày mặc định rỗng
+        for (int i = 1; i <= 3; i++) {
+            bw.write("#DAY:-" + i + "\n");
+            bw.write("Hoạt động 1: \n");
+            bw.write("Hoạt động 2: \n");
+            bw.write("Hoạt động 3: \n");
+            bw.write("Hoạt động 4: \n");
+            bw.write("Hoạt động 5: \n");
+            bw.write("TICK: \n");
+            bw.write("NOTE: \n");
+        }
+
+        bw.write("\n"); // dòng trống tách tài khoản
+
+        bw.close();
+
+        JOptionPane.showMessageDialog(this, "Tạo tài khoản thành công!");
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi lưu tài khoản!");
+        e.printStackTrace();
+    }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

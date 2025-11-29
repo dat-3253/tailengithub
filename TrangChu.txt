@@ -1,9 +1,11 @@
 #ACCOUNT
-TK=
-MK=
+TK=user1
+MK=12345
 
 #DAY:0
-Hoạt động 1: 
-TICK: 0
+Hoạt động 1: Đọc Sách 40p
+Hoạt động 2: Tập Thể Dục
+Hoạt động 3: Học java
+TICK: 1 0 1
 NOTE: 
 #END

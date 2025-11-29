@@ -145,6 +145,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#x1ea1;o T&#xe0;i Kho&#x1ea3;n"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="jPasswordField1">
     </Component>

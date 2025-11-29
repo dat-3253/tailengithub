@@ -40,3 +40,31 @@ Hoạt động 1: Nghỉ ngơi
 Hoạt động 2: Xem phim
 TICK: 1 0
 NOTE: Thư giãn trước tuần mới.
+#ACCOUNT
+TK=ongcu3253
+MK=dat3253
+#DAY:-1
+Hoạt động 1: 
+Hoạt động 2: 
+Hoạt động 3: 
+Hoạt động 4: 
+Hoạt động 5: 
+TICK: 
+NOTE: 
+#DAY:-2
+Hoạt động 1: 
+Hoạt động 2: 
+Hoạt động 3: 
+Hoạt động 4: 
+Hoạt động 5: 
+TICK: 
+NOTE: 
+#DAY:-3
+Hoạt động 1: 
+Hoạt động 2: 
+Hoạt động 3: 
+Hoạt động 4: 
+Hoạt động 5: 
+TICK: 
+NOTE: 
+
